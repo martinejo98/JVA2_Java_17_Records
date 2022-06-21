@@ -1,8 +1,9 @@
-package com.example.JVA2_Java_17_Records;
+package com.example.JVA2_Java_17_Records.persona.domain;
 
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Data
 @Entity
@@ -37,12 +38,12 @@ public class Persona {
     private Boolean active;
 
     @Column
-    private String created_date;
+    private Date created_date;
 
     @Column
     private String imagen_url;
 
     @Column
-    private String termination_date;
+    private Date termination_date;
 
 }

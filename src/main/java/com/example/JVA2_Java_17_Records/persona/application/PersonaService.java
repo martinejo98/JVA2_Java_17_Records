@@ -1,9 +1,13 @@
-package com.example.JVA2_Java_17_Records;
+package com.example.JVA2_Java_17_Records.persona.application;
 
+import com.example.JVA2_Java_17_Records.persona.domain.Persona;
+import com.example.JVA2_Java_17_Records.persona.infraestructure.dto.PersonaDTO;
+import com.example.JVA2_Java_17_Records.persona.infraestructure.repository.PersonaRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -101,7 +105,7 @@ public class PersonaService {
             personaEntity.get().setCity(personaDTO.city());
             personaEntity.get().setImagen_url(personaDTO.image_url());
             personaEntity.get().setActive(personaDTO.active());
-            personaEntity.get().setCreated_date(personaDTO.created_date());
+            personaEntity.get().setCreated_date((Date) personaDTO.created_date());
 
             personaRepository.saveAndFlush(modelMapper.map(personaEntity, Persona.class));
             return personaDTO;
