@@ -3,7 +3,7 @@ package com.example.JVA2_Java_17_Records.persona.domain;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Data
 @Entity
